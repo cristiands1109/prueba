@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private youtube: YoutubeVideoPlayer) {}
+
+  playVideo(data){
+    this.youtube.openVideo(data);
+  }
 
 }
